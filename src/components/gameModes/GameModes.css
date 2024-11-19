@@ -1,0 +1,139 @@
+.game-modes {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: fit-content;
+  flex-wrap: wrap;
+  padding: 0rem 2rem;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+}
+
+.game-modes * {
+  color: black;
+}
+
+.game-modes-single,
+.game-modes-multi {
+  background: white
+    linear-gradient(20deg, rgba(213, 111, 62, 0.8) 0%, transparent 50%);
+  width: 500px;
+  max-width: 500px;
+  min-width: 400px;
+  padding: 2rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  box-shadow: 1px 1px 5px var(--orange);
+}
+
+.game-modes-multi {
+  border-radius: 0px 10px 10px 0px;
+}
+
+.game-modes-single {
+  border-radius: 10px 0px 0px 10px;
+}
+
+.multiSlider {
+  animation: multiSlider 1s ease-in-out forwards,
+    shine 2s ease-in-out 1s forwards;
+}
+
+.singleSlider {
+  animation: singleSlider 1s ease-in-out forwards,
+    shine 3s ease-in-out 1s forwards;
+}
+
+.game-modes p {
+  color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  text-align: center;
+}
+
+.game-modes h1 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  margin-top: 2rem;
+  background-color: var(--orange);
+  border: none;
+  outline: none;
+  padding: 0.7rem 3rem;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 5px black;
+}
+
+@keyframes multiSlider {
+  from {
+    transform: translate(10%, 10%);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translate(0%, 0%);
+  }
+}
+@keyframes singleSlider {
+  from {
+    transform: translate(-10%, 10%);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes shine {
+  50% {
+    box-shadow: 5px 5px 10px var(--orange);
+  }
+  0%,
+  100% {
+    box-shadow: 1px 1px 10px var(--orange);
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  .game-modes {
+    gap: 1rem;
+    padding: 2rem 2rem;
+  }
+
+  .game-modes-multi {
+    border-radius: 10px;
+  }
+
+  .game-modes-single {
+    border-radius: 10px;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .game-modes {
+    padding: 0rem 0rem;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+  }
+
+  .game-modes-single,
+  .game-modes-multi {
+    width: 80vw;
+    min-width: unset;
+  }
+}

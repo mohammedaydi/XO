@@ -1,0 +1,100 @@
+.single-mode {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  gap: 10vh;
+}
+
+.single-mode header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 2rem;
+}
+
+.single-mode header > div {
+}
+
+.single-mode .playerx {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-mode .palyero {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-mode .timer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.game-board {
+  background: linear-gradient(60deg, var(--orange) 40%, var(--blue) 100%);
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-rows: repeat(3, minmax(100px, 1fr));
+
+  text-align: center;
+  gap: 5px;
+
+  width: 400px;
+  height: 400px;
+  min-width: 400px;
+  position: relative;
+}
+
+.game-board .item {
+  background-color: var(--black);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-board .item img {
+  width: 40%;
+}
+
+.game-board .item:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 630px) {
+  .game-board {
+    background: linear-gradient(60deg, var(--orange) 40%, var(--blue) 100%);
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(80px, 1fr));
+    grid-template-rows: repeat(3, minmax(80px, 1fr));
+
+    text-align: center;
+    gap: 5px;
+
+    width: 240px;
+    height: 240px;
+    min-width: 240px;
+    position: relative;
+  }
+
+  .single-mode header {
+    gap: 0.5rem;
+    padding: 1rem 0.2rem;
+  }
+}
